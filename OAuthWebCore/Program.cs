@@ -27,9 +27,6 @@ builder.Services.AddAuthentication("cookie")
     {
         o.SignInScheme = "cookie";
 
-        //dotnet user-secrets init
-        //dotnet user-secrets set "Authentication:Github:ClientId" "<cliendid>"
-        //dotnet user-secrets set "Authentication:Github:ClientSecret" "<clientsecret>"
         var config = builder.Configuration;
         o.ClientId = config["Authentication:Github:ClientId"] ?? ""; 
         o.ClientSecret = config["Authentication:Github:ClientSecret"] ?? ""; 
